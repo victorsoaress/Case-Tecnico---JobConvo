@@ -2,12 +2,12 @@
 ## Este projeto tem como objetivo criar um sistema de gerenciamento de vagas de emprego usando Python 3.12.4 e Django 5.0.7. 
 O sistema permite que empresas cadastrem vagas e candidatos se candidatem a elas. Além disso, inclui funcionalidades para geração de relatórios gráficos com o Charts.js.
 ###
-Funcionalidades
-Cadastro de usuários com email e senha.
-Criação, edição e exclusão de vagas por empresas.
-Candidatura de usuários a vagas.
-Visualização de candidatos por vaga.
-Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
+- Funcionalidades
+ - Cadastro de usuários com email e senha.
+ - Criação, edição e exclusão de vagas por empresas.
+ - Candidatura de usuários a vagas.
+ - Visualização de candidatos por vaga.
+ - Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
 
 Pré-requisitos:
 VsCode(ou outro compilador)
