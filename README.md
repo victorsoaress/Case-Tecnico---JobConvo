@@ -10,10 +10,10 @@ Funcionalidades
 -Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
 
 Pré-requisitos:
--VsCode(ou outro compilador)
--Python
--pip (gerenciador de pacotes do Python)
--virtualenv (opcional, mas recomendado)
+--VsCode(ou outro compilador)
+--Python
+--pip (gerenciador de pacotes do Python)
+--virtualenv (opcional, mas recomendado)
 
 Para rodar o projeto
 
