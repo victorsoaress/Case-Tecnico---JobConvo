@@ -42,8 +42,24 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
+###Caso queira, está disponibilizado um BD para teste. Com 2 usuários cadastros e 4 vagas criadas.
+Login Candidato:
+email = usuario@candidato.com
+senha = Candidato12#
+Login Empresa:
+email = usuario@empresa.com
+senha = Empresa12#
+
+Para carregar o banco:
+
+```
+python manage.py loaddata db_teste.json
+
+```
+
 ###Rode o software em ambiente local
 ```
 python manage.py runserver
 ```
+
 
