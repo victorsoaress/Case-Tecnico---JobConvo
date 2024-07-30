@@ -3,17 +3,17 @@
 O sistema permite que empresas cadastrem vagas e candidatos se candidatem a elas. Além disso, inclui funcionalidades para geração de relatórios gráficos com o Charts.js.
 ###
 Funcionalidades
--Cadastro de usuários com email e senha.
--Criação, edição e exclusão de vagas por empresas.
--Candidatura de usuários a vagas.
--Visualização de candidatos por vaga.
--Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
+Cadastro de usuários com email e senha.
+Criação, edição e exclusão de vagas por empresas.
+Candidatura de usuários a vagas.
+Visualização de candidatos por vaga.
+Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
 
 Pré-requisitos:
---VsCode(ou outro compilador)
---Python
---pip (gerenciador de pacotes do Python)
---virtualenv (opcional, mas recomendado)
+VsCode(ou outro compilador)
+Python
+pip (gerenciador de pacotes do Python)
+virtualenv (opcional, mas recomendado)
 
 Para rodar o projeto
 
@@ -21,8 +21,9 @@ Abra o terminal e digite:
 
 ```
 git clone https://github.com/victorsoaress/Case-Tecnico---JobConvo.git
+```
+```
 cd Case-Tecnico---JobConvo
-
 ```
 
 Crie um ambiente virtual 
@@ -45,23 +46,32 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 Caso queira, está disponibilizado um BD para teste. Com 2 usuários cadastros e 4 vagas criadas.
--Login Candidato:
---email = usuario@candidato.com
---senha = Candidato12#
--Login Empresa:
---email = usuario@empresa.com
---senha = Empresa12#
+Login Candidato:
+email = usuario@candidato.com
+senha = Candidato12#
+Login Empresa:
+email = usuario@empresa.com
+senha = Empresa12#
 
 Para carregar o banco:
 
 ```
-python manage.py loaddata db_teste.json
+python manage.py loaddata db.json
 
 ```
 
-###Rode o software em ambiente local
+Foram implementados testes TDD. Caso queira visualizar como foram feitos, cada teste referente a cada app está no arquiv "app.tests"
+
+Para rodar todos os Testes
+```
+pytest
+```
+
+Rode o software em ambiente local
 ```
 python manage.py runserver
 ```
+
+
 
 
