@@ -29,7 +29,7 @@ cd Case-Tecnico---JobConvo
 
 ```
 python -m venv venv
-venv\Scripts\activate
+cd venv\Scripts\activate
 ```
 ###Instale todas as dependências necessárias
 ```
