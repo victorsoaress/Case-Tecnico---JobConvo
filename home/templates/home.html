@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
+</head>
+<body>
+    <h1>Case Técnico - Job Convo</h1>
+    <div >
+        <button>
+            <a href="{% url 'cadastro' %}">Cadastro</a>
+        </button>
+        <button>
+            <a href="{% url 'login' %}">Login</a>
+        </button>
+        
+        
+    </div>
+</body>
+<footer>
+    <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

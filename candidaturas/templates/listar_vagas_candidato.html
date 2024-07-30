@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'reset.css'%}">
+  <link rel="stylesheet" href="{% static 'vagas/listar_vagas.css' %}">
+</head>
+<body>
+  <h2 class="titulo">Vagas Disponíveis</h2>
+  <br>
+  <a href="{% url 'logout' %}" >Logout</a>
+  <br><br><br>
+  {% if messages %}  
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  <ul>
+    {% for vaga in vagas %}
+      <li class="card_vaga">
+        <h2 class="titulo_vaga">{{ vaga.nome }}</h2> 
+        <br>
+        <p class="escolaridade">Escolaridade mínima - {{vaga.get_escolaridade_minima_display}}</p>
+        <br>
+        <a class="botao-candidatar" href="{% url 'candidatar_vaga' vaga.id %}">Candidatar-se</a>
+      </li>
+    {% endfor %}
+    
+  </ul>
+</body>
+<footer>
+  <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

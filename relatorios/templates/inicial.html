@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'relatorios/inicial.css' %}">
+
+</head>
+<body>
+    <div class="principal">
+        <h2>Seja bem-vindo!</h2>
+        <p>Essa é a página da Empresa para o Case Técnico da Job Convo. Você pode criar vagas, visualizar, editar e deletar as vagas, e acessar a página de relatórios!</p>
+        <div class="links">
+            <a href="{%url 'criarvagas'%}">CRIAR VAGA</a>
+            <a href="{%url 'listarvagasadm'%}">VER VAGAS</a>
+            <a href="{% url 'relatorios' %}">RELATÓRIOS</a>
+            <a class="logout" href="{% url 'logout' %}" >LOGOUT</a>
+
+        </div>  
+    </div>
+</body>
+<footer>
+    <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

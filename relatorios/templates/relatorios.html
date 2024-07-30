@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'relatorios/relatorios.css' %}">
+</head>
+<body>
+    <h2>Relatório de Vagas e Candidatos</h2>
+    <div class="principal">
+        <div>
+            <canvas id="vagasCriadasChart" width="400" height="400"></canvas>
+        </div>
+        <div>
+            <canvas id="candidatosRecebidosChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <a class="voltar" href="{% url 'inicial' %}">Voltar</a>  
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="{% static 'js/charts.js' %}"></script>
+
+</body>
+<footer>
+    <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+
+</html>

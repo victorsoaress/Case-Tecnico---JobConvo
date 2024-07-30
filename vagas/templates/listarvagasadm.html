@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'reset.css'%}">
+  <link rel="stylesheet" href="{% static 'vagas/listarvagasadm.css' %}">
+</head>
+<body>
+  <h2 class="titulo">Vagas Criadas</h2>
+  <br>
+  <ul>
+    {% for vaga in vagas %}
+      <li class="card_vaga">
+        <div>
+        <h2 class="titulo_vaga">{{ vaga.nome }}</h2> 
+            <br>
+            <p class="escolaridade">Número de candidatos - {{vaga.num_candidaturas}}</p>
+            <br>
+        </div>
+        <div class="botoes">
+            <a class="visualizar" href="{% url 'visualizar_candidaturas' vaga.id %}">Visualizar candidaturas</a>
+            <a class="editar" href="{% url 'editarvaga' vaga.id %}">Editar vaga</a>
+            <form action="{%url 'deletar_vaga' vaga.id%}" method="POST">
+                {%csrf_token%}
+                <button type="submit" class="deletar">Deletar Vaga</button>
+            </form>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <a class="voltar" href="{% url 'inicial' %}" >Voltar</a>
+</body>
+<footer>
+  <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

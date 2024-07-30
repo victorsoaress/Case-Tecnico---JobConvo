@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Vaga</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'vagas/editarvaga.css' %}">
+
+
+</head>
+<body>
+    <h2>Editar Vaga</h2>
+    <form method="post" action="{% url 'editarvaga' vaga.id %}">
+      {% csrf_token %}
+      <div>
+          <label for="nome">Nome da vaga</label>
+          {{ form.nome }}
+        </div>
+        <div>
+          <label for="requisitos">Requisitos</label>
+          {{ form.requisitos }}
+        </div>
+        <div>
+          <label for="faixa_salarial">Faixa Salarial</label>
+          {{ form.faixa_salarial }}
+        </div>  
+        <div>
+          <label for="escolaridade_minima">Escolaridade Mínima</label>
+          {{ form.escolaridade_minima }}
+        </div>    
+      <button type="submit">Salvar</button>
+      <a href="{% url 'listarvagasadm' %}">Voltar para a lista de vagas</a>  
+    </form>
+    
+</body>
+<footer>
+  <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

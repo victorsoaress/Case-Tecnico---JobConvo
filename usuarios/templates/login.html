@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+</head>
+<body>
+    <div class="card_form">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <div class="form_input">
+                <label for="input">Email</label>
+                <input type="text" placeholder="Digite seu e-mail.." name="email">
+            </div>
+            <br>
+            <div class="form_input">
+                <label for="input">Senha</label>
+                <input type="password" placeholder="Digite sua senha.." name="senha">
+            </div>
+            <br>
+            <button type="submit">Login</button>
+            <a href="{% url 'home' %}">Voltar</a>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+    </div>
+</body>
+<footer>
+    <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+  </footer>
+</html>

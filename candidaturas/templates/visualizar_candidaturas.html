@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Vaga</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vagas/visualizar_candidaturas.css' %}">
+</head>
+<body>
+    <h2>Candidaturas para "{{ vaga.nome }}"</h2>
+    <p>Requisitos - {{vaga.requisitos}}</p>
+    <p>Faixa salarial - {{vaga.get_faixa_salarial_display}}</p>
+    <p>Escolaridade mínima - {{vaga.get_escolaridade_minima_display}}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Candidato</th>
+          <th>Email</th>
+          <th>Pretensão Salarial</th>
+          <th>Experiência</th>
+          <th>Última Escolaridade</th>
+          <th>Pontuação do Candidato</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for candidatura in candidaturas %}
+          <tr>
+            <td>{{ candidatura.candidato.first_name }}</td>
+            <td>{{ candidatura.candidato.username }}</td>
+            <td>{{ candidatura.pretensao_salarial }}</td>
+            <td>{{ candidatura.experiencia }}</td>
+            <td>{{ candidatura.escolaridade }}</td>
+            <td>{{ candidatura.calcular_pontuacao}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url 'listarvagasadm' %}">Voltar para a lista de vagas</a>
+</body>
+<footer>
+  <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatar</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'candidatar/candidatar.css' %}">
+</head>
+<body>
+    <h2>Candidatar-se à Vaga: {{ vaga.nome }}</h2>
+    <div class="descricao">
+      <p>Requisitos - {{vaga.requisitos}}</p>
+      <br>
+      <p>Escolaridade mínima - {{vaga.get_escolaridade_minima_display}}</p>
+    </div>
+    <div>
+      <form name="form" action="{% url 'candidatar_vaga' vaga.id %}" method="POST">
+        {% csrf_token %}
+        <div>
+          <label for="experiencia">Experiência</label>
+          {{ form.experiencia }}
+        </div>
+        <div>
+          <label for="faixa_salarial">Pretensão Salarial</label>
+          {{ form.pretensao_salarial }}
+        </div>
+        <div>
+          <label for="escolaridade">Última escolaridade</label>
+          {{ form.escolaridade }}
+        </div>      
+        <button type="submit">Enviar Candidatura</button>
+        <a href="{% url 'listar_vagas_candidato' %}">Voltar para a lista de vagas</a>
+      </form>
+    </div>
+</body>
+<footer>
+  <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>

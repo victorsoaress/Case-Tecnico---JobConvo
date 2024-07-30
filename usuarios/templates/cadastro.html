@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css'%}">
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
+
+</head>
+<body>
+    <h1>Cadastre-se</h1>
+    <div class="card_form">
+        <form action="{% url 'cadastro' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="input">Nome</label>
+                <input type="text" placeholder="Informe o seu nome.." name="nome">
+            </div>
+            <div>
+                <label for="input">Email</label>
+                <input type="email" placeholder="Informe seu email.." name="email">
+            </div>
+            <div>
+                <label for="input">Senha</label>
+                <p class="senha">Sua senha deve conter no mínimo 8 caracteres e não ser inteiramente numérica.</p>
+                <input type="password" placeholder="Informe sua senha.." name="senha">
+            </div>
+            <div>
+                <label for="select">Informe se você é Empresa ou Candidato</label><br>
+                <select name="tipo" >
+                    <option value="Candidato">Candidato</option>
+                    <option value="Empresa">Empresa</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit">Cadastrar</button>
+            <a href="{% url 'home' %}">Voltar</a>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+    </div>
+</body>
+<footer>
+    <p>Sistema desenvolvido por Victor Soares para o Case Técnico da Job Convo</p>
+</footer>
+</html>
