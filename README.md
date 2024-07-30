@@ -49,6 +49,7 @@ Caso queira, está disponibilizado um BD para teste. Com 2 usuários cadastros e
 Login Candidato:
  - email = usuario@candidato.com
  - senha = Candidato12#
+
 Login Empresa:
  - email = usuario@empresa.com
  - senha = Empresa12#
