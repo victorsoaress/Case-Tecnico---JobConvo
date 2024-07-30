@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.http import JsonResponse
 from django.db.models import Count
 from vagas.models import Vaga 
 from candidaturas.models import Candidatura
-from django.utils import timezone
 from django.db.models.functions import TruncMonth
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required

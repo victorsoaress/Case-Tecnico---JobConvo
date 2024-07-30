@@ -1,16 +1,11 @@
 # users/views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth import login as login_django
 from django.contrib.auth.decorators import login_required
-from rolepermissions.roles import assign_role
 from .models import Vaga
 from .forms import VagaForm
 from django.db.models import Count
 from usuarios.decorators import empresa_required
-from django.contrib import messages  # Para usar o sistema de mensagens
+from django.contrib import messages  
 
 @empresa_required
 @login_required
