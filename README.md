@@ -11,6 +11,7 @@ Funcionalidades
 
 Pré-requisitos:
  - VsCode(ou outro compilador)
+ - Git
  - Python
  - pip (gerenciador de pacotes do Python)
  - virtualenv (opcional, mas recomendado)
