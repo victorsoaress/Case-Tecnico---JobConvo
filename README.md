@@ -29,7 +29,9 @@ Crie um ambiente virtual
 
 ```
 python -m venv venv
-cd venv\Scripts\activate
+```
+```
+venv\Scripts\activate
 ```
 Instale todas as dependências necessárias
 ```
