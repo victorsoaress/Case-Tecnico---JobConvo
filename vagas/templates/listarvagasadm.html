@@ -13,7 +13,7 @@
   <br>
   <ul>
     {% for vaga in vagas %}
-      <li class="card_vaga">
+      <li class="{% if vaga.status == 'ativo' %}card_vaga{% else %}vaga-encerrada{% endif %}">
         <div>
         <h2 class="titulo_vaga">{{ vaga.nome }}</h2> 
             <br>
@@ -22,7 +22,11 @@
         </div>
         <div class="botoes">
             <a class="visualizar" href="{% url 'visualizar_candidaturas' vaga.id %}">Visualizar candidaturas</a>
-            <a class="editar" href="{% url 'editarvaga' vaga.id %}">Editar vaga</a>
+            <a class="editar" href="{% url 'editar_vaga' vaga.id %}">Editar vaga</a>
+            <form action="{%url 'encerrar_vaga' vaga.id%}" method="POST">
+                {%csrf_token%}
+                <button type="submit" class="encerrar">Encerrar Vaga</button>
+            </form>
             <form action="{%url 'deletar_vaga' vaga.id%}" method="POST">
                 {%csrf_token%}
                 <button type="submit" class="deletar">Deletar Vaga</button>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <h2>Editar Vaga</h2>
-    <form method="post" action="{% url 'editarvaga' vaga.id %}">
+    <form method="post" action="{% url 'editar_vaga' vaga.id %}">
       {% csrf_token %}
       <div>
           <label for="nome">Nome da vaga</label>
@@ -31,7 +31,7 @@
           {{ form.escolaridade_minima }}
         </div>    
       <button type="submit">Salvar</button>
-      <a href="{% url 'listarvagasadm' %}">Voltar para a lista de vagas</a>  
+      <a href="{% url 'listar_vagas_adm' %}">Voltar para a lista de vagas</a>  
     </form>
     
 </body>

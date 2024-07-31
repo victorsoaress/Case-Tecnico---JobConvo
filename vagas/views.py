@@ -9,7 +9,7 @@ from django.contrib import messages
 
 @empresa_required
 @login_required
-def criarvagas(request):
+def criar_vagas(request):
     if request.method == 'POST':
         form=VagaForm(request.POST)
         if form.is_valid():
@@ -22,7 +22,7 @@ def criarvagas(request):
 
 @empresa_required
 @login_required
-def listarvagasadm(request):
+def listar_vagas_adm(request):
       vagas = Vaga.objects.annotate(num_candidaturas=Count('candidatura'))
       return render(request, 'listarvagasadm.html',{'vagas':vagas})
 
@@ -39,7 +39,7 @@ def deletar_vaga(request, id):
 
 @empresa_required
 @login_required
-def editarvaga(request, id):
+def editar_vaga(request, id):
     vaga = get_object_or_404(Vaga, id=id)
 
     if request.method == 'POST':
@@ -50,3 +50,12 @@ def editarvaga(request, id):
     else: 
         form = VagaForm(instance=vaga)
     return render(request, 'editarvaga.html', {'form':form, 'vaga':vaga})
+
+def encerrar_vaga(request,id):
+    vaga = get_object_or_404(Vaga, id=id)
+    if request.method == 'POST':
+        vaga.status='encerrada'
+        vaga.save()
+        return redirect('listarvagasadm')  
+    
+    return redirect('listarvagasadm')

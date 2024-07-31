@@ -22,6 +22,7 @@ class Vaga(models.Model):
     requisitos = models.TextField(verbose_name='Requisitos')
     faixa_salarial = models.CharField(max_length=15,choices=FAIXA_SALARIAL_CHOICES, verbose_name='Faixa salarial')
     escolaridade_minima = models.CharField(max_length=20, choices=ESCOLARIDADE_CHOICES, verbose_name='Escolaridade mínima')
+    status = models.CharField(default='ativo',max_length=10)
     criado_em = models.DateTimeField(auto_now_add=True)
     modificado_em = models.DateTimeField(auto_now=True)
 

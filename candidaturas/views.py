@@ -11,7 +11,7 @@ from usuarios.decorators import empresa_required
 
 @login_required
 def listar_vagas_candidato(request):
-    vagas = Vaga.objects.all()
+    vagas = Vaga.objects.filter(status='ativo')
     return render (request, 'listar_vagas_candidato.html', {'vagas':vagas})
 
 @login_required
