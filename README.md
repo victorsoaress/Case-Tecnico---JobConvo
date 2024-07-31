@@ -4,7 +4,8 @@ O sistema permite que empresas cadastrem vagas e candidatos se candidatem a elas
 ###
 Funcionalidades
  - Cadastro de usuários com email e senha.
- - Criação, edição e exclusão de vagas por empresas.
+ - Criação, edição, encerramento e exclusão de vagas por empresas.
+ - A função de encerrar a vaga foi implementada com o seguinte objetivo: Se a vaga for encerrada, ela continuará aparecendo nos relatórios de criar vagas e candidaturas recebidas, porém, estará invisível para candidatos, e a empresa poderá posteriormente deletá-la, o "encerrar" adiciona um status de encerrado para a vaga. A função "deletar" irá excluir a vaga e as candidaturas referentes à ela do banco de dados, consequentemente, não aparecendo na sessão de relatórios.
  - Candidatura de usuários a vagas.
  - Visualização de candidatos por vaga.
  - Relatórios gráficos de vagas criadas por mês e candidatos recebidos por mês.
