@@ -13,9 +13,9 @@ class VagaViewsTest(TestCase):
         self.client.login(username='empresa@example.com', password='senha')
 
         # URLs para teste
-        self.criarvagas_url = reverse('criarvagas')
-        self.listarvagasadm_url = reverse('listarvagasadm')
-        self.editarvaga_url = lambda id: reverse('editarvaga', args=[id])
+        self.criar_vagas_url = reverse('criar_vagas')
+        self.listar_vagas_adm_url = reverse('listar_vagas_adm')
+        self.editar_vaga_url = lambda id: reverse('editar_vaga', args=[id])
         self.deletar_vaga_url = lambda id: reverse('deletar_vaga', args=[id])
 
         # Cria uma vaga de teste
@@ -28,7 +28,7 @@ class VagaViewsTest(TestCase):
 
     def test_criar_vaga_sucesso(self):
         """Verifica se o processo de criação de vaga está funcionando corretamente"""
-        response = self.client.post(self.criarvagas_url, {
+        response = self.client.post(self.criar_vagas_url, {
             'nome': 'Nova Vaga',
             'requisitos': 'Requisitos da nova vaga.',
             'faixa_salarial': '3000-100000',
@@ -39,18 +39,18 @@ class VagaViewsTest(TestCase):
 
     def test_criar_vaga_sem_dados(self):
         """Verifica se a criação de vaga sem dados não funciona"""
-        response = self.client.post(self.criarvagas_url, {})
+        response = self.client.post(self.criar_vagas_url, {})
         self.assertEqual(response.status_code, 200)  # Retorna ao formulário com erros
 
     def test_listar_vagas_adm(self):
         """Verifica se a listagem de vagas está funcionando corretamente"""
-        response = self.client.get(self.listarvagasadm_url)
+        response = self.client.get(self.listar_vagas_adm_url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Vaga de Teste')
 
     def test_editar_vaga(self):
         """Verifica se a edição de vaga está funcionando corretamente"""
-        response = self.client.post(self.editarvaga_url(self.vaga.id), {
+        response = self.client.post(self.editar_vaga_url(self.vaga.id), {
             'nome': 'Vaga Editada',
             'requisitos': 'Requisitos atualizados.',
             'faixa_salarial': '1000-2000',

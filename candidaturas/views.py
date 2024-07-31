@@ -28,7 +28,6 @@ def candidatar_vaga(request,id):
             candidatura.candidato = request.user
             candidatura.vaga = vaga
             candidatura.save()
-            print('candidatura salva')
             return redirect ('listar_vagas_candidato')
     else:
         form = CandidaturaForm()
