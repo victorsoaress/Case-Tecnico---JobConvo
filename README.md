@@ -64,7 +64,7 @@ python manage.py loaddata db.json
 
 ```
 
-Foram implementados testes TDD. Caso queira visualizar como foram feitos, cada teste referente a cada app está no arquivo "app.tests"
+Foram implementados testes TDD. Caso queira visualizar como foram feitos, cada teste referente a cada app está no arquivo "app.tests" com alguns comentários referentes ao resultado esperado no teste.
 
 Para rodar todos os Testes
 ```
