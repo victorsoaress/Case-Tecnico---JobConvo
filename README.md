@@ -75,6 +75,13 @@ Rode o software em ambiente local
 ```
 python manage.py runserver
 ```
+Para acessar o servidor, é provável que seu endereço seja
+```
+http://127.0.0.1:8000/
+```
+
+Qualquer dúvida, entrar em contato:
+victorsantossoaresh@hotmail.com
 
 
 
